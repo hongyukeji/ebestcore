@@ -82,7 +82,7 @@ class BasesController extends Controller
             $items = $request->except('_token');
         }
 
-        settings(['app' => array_replace_recursive(config('app'), $items)]);
+        settings(['app' => $items]);
 
         return redirect()->route('backend.systems.bases.index')->with('message', trans('backend.messages.update_success'));
     }

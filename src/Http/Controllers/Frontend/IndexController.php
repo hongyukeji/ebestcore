@@ -3,7 +3,6 @@
 namespace System\Http\Controllers\Frontend;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use System\Models\Advert;
 
 class IndexController extends Controller

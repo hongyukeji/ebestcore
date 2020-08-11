@@ -27,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
             }
         }*/
 
+        $this->mergeConfigFrom(
+            __DIR__ . '/../Config/app.php', 'app'
+        );
+
         // 手机号验证规则
         Validator::extend('mobile', function ($attribute, $value, $parameters, $validator) {
             $regex = config('params.regex.mobile', '/^1\d{10}$/');
