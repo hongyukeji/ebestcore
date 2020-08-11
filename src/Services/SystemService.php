@@ -113,7 +113,7 @@ class SystemService extends Service
                     }
 
                     // 更新系统版本号
-                    settings(['app' => array_replace_recursive(config('app'), ['version' => $update['version']])]);
+                    //settings(['app' => array_replace_recursive(config('app'), ['version' => $update['version']])]);
                 }
 
                 // 系统 - 更新事件
