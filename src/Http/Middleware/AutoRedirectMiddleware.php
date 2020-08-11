@@ -4,6 +4,7 @@ namespace System\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 class AutoRedirectMiddleware
 {
@@ -19,7 +20,7 @@ class AutoRedirectMiddleware
         // 手机端自动跳转
         // $url_array = parse_url($url);
         if ($request->isMethod('get')) {
-            if ($this->isMobile() && str_contains($request->route()->getActionName(), ['Controllers\Frontend'])) {
+            if ($this->isMobile() && Str::contains($request->route()->getActionName(), ['Controllers\Frontend'])) {
                 $redirect_url = route_url('mobile.index');
                 // 判断手机端对应的路由是否存在
                 $route_name = $request->route()->getName();

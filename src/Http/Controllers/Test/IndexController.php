@@ -6,6 +6,7 @@ use Carbon\CarbonInterval;
 use Hongyukeji\YiLianYunOrderPrint\Sdk\YiLianYunPrinter;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Str;
 use Modules\Cloud\Models\Update;
 use System\Librarys\PrintDevice\PrintDeviceUtil;
 use System\Models\Article;
@@ -555,7 +556,7 @@ class IndexController extends Controller
                 'articles', 'article_categories', 'article_comments',
             ];
 
-            $contains = str_contains($file, $migrations);
+            $contains = Str::contains($file, $migrations);
             if (!$contains && \Illuminate\Support\Facades\Storage::disk('root')->exists($file)) {
                 \Illuminate\Support\Facades\Storage::disk('root')->delete($file);
             }
@@ -586,7 +587,7 @@ class IndexController extends Controller
                     'articles', 'article_categories', 'article_comments',
                 ];
 
-                $contains = str_contains($file, $migrations);
+                $contains = Str::contains($file, $migrations);
                 if (!$contains && \Illuminate\Support\Facades\Storage::disk('root')->exists($file)) {
                     \Illuminate\Support\Facades\Storage::disk('root')->delete($file);
                 }

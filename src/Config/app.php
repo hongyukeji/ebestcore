@@ -14,7 +14,7 @@ return [
 
     'system_name' => env('APP_SYSTEM_NAME', '旺迈特'),
 
-    'version' => '3.9.107',
+    'version' => \System\Foundation\Application::VERSION,
 
     'author' => env('APP_AUTHOR', '鸿宇科技'),
 
