@@ -16,6 +16,6 @@ class BroadcastServiceProvider extends ServiceProvider
     {
         Broadcast::routes();
 
-        require base_path('system/Routes/channels.php');
+        require base_path('vendor/hongyukeji/ebestcore/src/Routes/channels.php');
     }
 }
