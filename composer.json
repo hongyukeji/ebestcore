@@ -35,7 +35,7 @@
         "jacobcyl/ali-oss-storage": "^2.1",
         "jaeger/querylist": "^4.1",
         "jenssegers/agent": "^2.6",
-        "laravel/framework": "^6.2 || ^7.0",
+        "laravel/framework": "^6.2",
         "laravel/helpers": "^1.1",
         "laravel/socialite": "^4.1",
         "laravel/telescope": "^2.1",

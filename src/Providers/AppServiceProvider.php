@@ -27,9 +27,47 @@ class AppServiceProvider extends ServiceProvider
             }
         }*/
 
-        $this->mergeConfigFrom(
-            __DIR__ . '/../Config/app.php', 'app'
-        );
+        $this->mergeConfigFrom(__DIR__ . '/../Config/app.php', 'app');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/api.php', 'api');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/broadcasting.php', 'broadcasting');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/captcha.php', 'captcha');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/debugbar.php', 'debugbar');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/demo.php', 'demo');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/elfinder.php', 'elfinder');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/empower.php', 'empower');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/geoip.php', 'geoip');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/image.php', 'image');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/imageup.php', 'imageup');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/install.php', 'install');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/jwt.php', 'jwt');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/log-viewer.php', 'log-viewer');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/menus.php', 'menus');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/modules.php', 'modules');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/oauth.php', 'oauth');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/params.php', 'params');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/payments.php', 'payments');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/permission.php', 'permission');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/pipeline.php', 'pipeline');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/plugins.php', 'plugins');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/purifier.php', 'purifier');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/rbac.php', 'rbac');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/settings.php', 'settings');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/shop.php', 'shop');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/sms.php', 'sms');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/statuscode.php', 'statuscode');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/systems.php', 'systems');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/telescope.php', 'telescope');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/terminal.php', 'terminal');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/themes.php', 'themes');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/translate.php', 'translate');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/ueditor.php', 'ueditor');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/uploads.php', 'uploads');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/validation.php', 'validation');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/websites.php', 'websites');
+
+
+        $this->mergeConfigFrom(__DIR__ . '/../Config/wmt.php', 'wmt');
+
 
         // 手机号验证规则
         Validator::extend('mobile', function ($attribute, $value, $parameters, $validator) {
