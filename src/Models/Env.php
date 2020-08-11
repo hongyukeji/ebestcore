@@ -6,6 +6,7 @@ use Illuminate\Container\Container;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Str;
 
 class Env extends Model
 {
@@ -90,7 +91,7 @@ class Env extends Model
         $contentArray = $this->getEnvFile();
         $content = $contentArray->transform(function ($item) use ($data, &$string) {
             foreach ($data as $key => $value) {
-                if (str_contains($item, $key)) {
+                if (Str::contains($item, $key)) {
                     return $key . '=' . $value;
                 } else {
                     $string = $key . '=' . $value;
