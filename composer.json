@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.6",
-        "laravel/framework": "5.5.*"
+        "laravel/framework": "~6 || ^7.0"
     },
     "require-dev": {
     },
@@ -26,5 +26,12 @@
         }
     },
     "autoload-dev": {
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "System\\Providers\\AppServiceProvider"
+            ]
+        }
     }
 }
