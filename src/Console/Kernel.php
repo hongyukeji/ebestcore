@@ -41,6 +41,6 @@ class Kernel extends ConsoleKernel
 
         //$this->load(__DIR__ . '/../../system/Console/Commands');
         $this->load(base_path('system/Console/Commands'));
-        require base_path('system/Routes/console.php');
+        require base_path('vendor/hongyukeji/ebestcore/src/Routes/console.php');
     }
 }
