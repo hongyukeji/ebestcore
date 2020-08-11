@@ -53,7 +53,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware('web')
             ->namespace($this->namespace)
-            ->group(base_path('system/Routes/web.php'));
+            ->group(base_path('vendor/hongyukeji/ebestcore/src/Routes/web.php'));
     }
 
     /**
@@ -67,6 +67,6 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware('api')
             ->namespace($this->namespace)
-            ->group(base_path('system/Routes/api.php'));
+            ->group(base_path('vendor/hongyukeji/ebestcore/src/Routes/api.php'));
     }
 }
