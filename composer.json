@@ -1,0 +1,30 @@
+{
+    "name": "hongyukeji/ebestcore",
+    "description": "ebestmall core.",
+    "keywords": ["ebestmall", "ebest", "core", "laravel-core"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shadow",
+            "email": "admin@hongyuvip.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6",
+        "laravel/framework": "5.5.*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "files": [
+            "src/Helpers/functions.php"
+        ],
+        "psr-4": {
+            "System\\": "src/"
+        }
+    },
+    "autoload-dev": {
+    }
+}
