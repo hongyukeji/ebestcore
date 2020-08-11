@@ -64,10 +64,7 @@ class AppServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../Config/uploads.php', 'uploads');
         $this->mergeConfigFrom(__DIR__ . '/../Config/validation.php', 'validation');
         $this->mergeConfigFrom(__DIR__ . '/../Config/websites.php', 'websites');
-
-
         $this->mergeConfigFrom(__DIR__ . '/../Config/wmt.php', 'wmt');
-
 
         // 手机号验证规则
         Validator::extend('mobile', function ($attribute, $value, $parameters, $validator) {
