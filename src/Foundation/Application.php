@@ -4,5 +4,5 @@ namespace System\Foundation;
 
 class Application
 {
-    const VERSION = '3.9.107';
+    const VERSION = '3.9.108';
 }
