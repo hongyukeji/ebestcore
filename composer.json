@@ -20,7 +20,7 @@
         "dingo/api": "^2.3",
         "doctrine/dbal": "^2.9",
         "gregwar/captcha": "^1.1",
-        "hongyukeji/laravel-geoip": "^1.1",
+        "hongyukeji/laravel-geoip": "^2.0",
         "hongyukeji/laravel-helper": "^1.0",
         "hongyukeji/laravel-payment": "^1.1",
         "hongyukeji/laravel-pipeline": "^1.0",
