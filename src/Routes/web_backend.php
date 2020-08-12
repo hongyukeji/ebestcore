@@ -192,6 +192,7 @@ if (config('systems.routes.backend.status', true)) {
             });
 
             // 商品
+            Route::put('products/batch', 'ProductsController@batchUpdate')->name('products.batch');
             Route::resource('products', 'ProductsController');
             Route::group(['namespace' => 'Product'], function () {
                 Route::group(['prefix' => 'product', 'as' => 'product.'], function () {

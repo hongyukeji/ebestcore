@@ -195,4 +195,13 @@ class ProductsController extends Controller
         }
         return redirect()->route('backend.products.index')->with('message', trans('backend.messages.deleted_success'));
     }
+
+    public function batchUpdate(Request $request)
+    {
+        $id_array = explode(',', $request->input('id'));
+        $column_key = $request->input('column_key');
+        $column_val = $request->input('column_val');
+        Product::whereIn('id', $id_array)->update([$column_key => $column_val]);
+        return redirect()->back()->with('message', "批量更新成功！");
+    }
 }
