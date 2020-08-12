@@ -161,6 +161,12 @@ class ProductObserver
                 ProductImage::query()->where('product_id', $product->id)->whereNotIn('id', $product_image_ids)->delete();
             }
 
+            // 删除多余图片
+            $extra_image_ids = $product->images->skip(config('params.products.image_number', 5))->pluck('id');
+            if ($extra_image_ids) {
+                ProductImage::query()->where('product_id', $product->id)->whereIn('id', $extra_image_ids)->delete();
+            }
+
             // 商品扩展
             if ($request->filled('extend')) {
                 //$product->extend()->update($request->input('extend'));
