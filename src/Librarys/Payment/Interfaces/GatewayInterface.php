@@ -9,7 +9,7 @@ interface GatewayInterface
      *
      * @return mixed
      */
-    public function boot();
+    //public function boot();
 
     /**
      * 电脑端支付
@@ -30,13 +30,13 @@ interface GatewayInterface
      *
      * @return mixed
      */
-    public function app();
+    //public function app();
 
     /**
      * 验证签名
      *
      * @return mixed
      */
-    public function verify();
+    //public function verify();
 
 }

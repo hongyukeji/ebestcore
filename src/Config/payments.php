@@ -35,6 +35,21 @@ return [
             ],
             'status' => true,
         ],
+        'bankwire' => [
+            'name' => '电子汇款',
+            'driver' => '\System\\Librarys\\Payment\\Gateways\\BankWire',
+            'type' => 'local',
+            'options' => [
+                'payee_name' => '旺迈特科技有限公司', // 收款人名称
+                'account_number' => '6222 0000 0000 0000 000', // 银行账号
+                'opening_bank' => '中国工商银行北京支行', // 开户行
+                'bank_name' => '工商银行', // 银行名称
+            ],
+            'support_terminal' => [
+                'pc', 'wap', 'app', 'miniapp',
+            ],
+            'status' => true,
+        ],
         /*'paypal' => [
             'name' => 'PayPal',
             'driver' => '\System\\Librarys\\Payment\\Gateways\\PayPal',
