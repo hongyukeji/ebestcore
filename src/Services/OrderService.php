@@ -37,34 +37,34 @@ class OrderService extends Service
 
         // 检查购物车数组是否为空
         if (!$carts->count()) {
-            return result()->failed('未选择有效的购物车商品');
+            return return_result()->failed('未选择有效的购物车商品');
         }
 
         // 检查商品状态\库存是否正常
         foreach ($carts as $cart) {
             // 检查商品状态
             if (is_null($cart->product->status)) {
-                return result()->failed('购物车中商品ID为[' . $cart->product_id . ']的商品不存在');
+                return return_result()->failed('购物车中商品ID为[' . $cart->product_id . ']的商品不存在');
             }
             if ($cart->product->status != Product::STATUS_ON_SALE) {
-                return result()->failed('[' . $cart->product->name . ']商品未上架');
+                return return_result()->failed('[' . $cart->product->name . ']商品未上架');
             }
 
             // 检查库存
             if ($cart->product->stock < $cart->number) {
-                return result()->failed($cart->product->name . '库存不足');
+                return return_result()->failed($cart->product->name . '库存不足');
             }
             if ($cart->product_sku_id > 0 && $cart->productSku->stock < $cart->number) {
-                return result()->failed($cart->product->name . 'Sku属性' . $cart->productSku->name . '库存不足');
+                return return_result()->failed($cart->product->name . 'Sku属性' . $cart->productSku->name . '库存不足');
             }
 
             // 检查商家状态
             if ($cart->product->shop->id > 0 && $cart->product->shop->status != Shop::STATUS_ACTIVE) {
-                return result()->failed('购物车中[' . $cart->product->name . ']商品的店铺状态不正常');
+                return return_result()->failed('购物车中[' . $cart->product->name . ']商品的店铺状态不正常');
             }
         }
 
-        return result()->success($carts);
+        return return_result()->success($carts);
     }
 
     /*
@@ -74,7 +74,7 @@ class OrderService extends Service
     {
         $result = $this->checkCartData($cart_ids, $user_id);
         if (!$result->verify()) {
-            return result()->failed($result->message);
+            return return_result()->failed($result->message);
         }
         $carts = $result->get('data');
         $total_price = 0;
@@ -100,7 +100,7 @@ class OrderService extends Service
             'total_freight' => 0,
             'support_invoice' => $support_invoice,
         ]);
-        return result()->success($order_info);
+        return return_result()->success($order_info);
     }
 
     /*
@@ -123,7 +123,7 @@ class OrderService extends Service
         $data = DB::transaction(function () use ($request, $cart_ids, $user_id) {
             $cart_order_info = $this->getCartOrderInfo($cart_ids, $user_id);
             if (!$cart_order_info->verify()) {
-                return result()->failed($cart_order_info->message);
+                return return_result()->failed($cart_order_info->message);
             }
 
             // 购物车订单信息
@@ -138,19 +138,19 @@ class OrderService extends Service
             // 判断用户收货地址是否存在
             $address_id = $request->input('address_id');
             if (is_null($address_id)) {
-                return result()->failed('请选择收货地址，收货地址不能为空');
+                return return_result()->failed('请选择收货地址，收货地址不能为空');
             }
 
             $address = UserAddress::query()->where('user_id', $user_id)->find($address_id);
             if (!$address) {
-                return result()->failed('请选择有效的收货地址');
+                return return_result()->failed('请选择有效的收货地址');
             }
 
             //判断用户发票是否存在
             if ($request->filled('invoice_id')) {
                 $invoice = UserInvoice::query()->where('user_id', $user_id)->find($request->input('invoice_id'));
                 if (!$invoice) {
-                    return result()->failed('用户发票不存在');
+                    return return_result()->failed('用户发票不存在');
                 }
             }
 
@@ -226,7 +226,7 @@ class OrderService extends Service
             Cart::destroy($carts->pluck('id'));
 
             // 返回支付日志模型
-            return result()->success($payment_log);
+            return return_result()->success($payment_log);
         });
 
         return $data;

@@ -320,6 +320,22 @@ class FrontendPresenter
             ->get();
     }
 
+    /*
+     * 热销商品列表
+     */
+    public function getHotProduct($number = 10)
+    {
+        return Product::query()
+            ->where('status', true)
+            ->where('is_hot', true)
+            ->orderBy('sort', 'desc')
+            ->take($number)
+            ->get();
+    }
+
+    /*
+     * 随机商品
+     */
     public function getRandomProduct($number = 10, $except_ids = [])
     {
         return Product::query()
