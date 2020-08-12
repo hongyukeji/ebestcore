@@ -13,7 +13,7 @@ foreach (array_diff(scandir(dirname(__FILE__)), ['.', '..', basename(__FILE__)])
 /*
  * 自动包含app/Helpers目录下所有php文件
  */
-$app_helpers_path = dirname(dirname(dirname(__FILE__))) . '/app/Helpers';
+/*$app_helpers_path = dirname(dirname(dirname(__FILE__))) . '/app/Helpers';
 foreach (array_diff(scandir($app_helpers_path), ['.', '..']) as $file) {
     include_once $app_helpers_path . DIRECTORY_SEPARATOR . "$file";
-}
+}*/
