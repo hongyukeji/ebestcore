@@ -43,7 +43,7 @@ class ComposerAutoloadCommand extends Command
         $path = base_path();    // 系统根路径
         $cmd = "cd {$path} && {$php} composer.phar install --prefer-dist --no-progress && {$php} composer.phar dump-autoload";
         if (!strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            $cmd = 'sudo ' . $cmd;
+            //$cmd = 'sudo ' . $cmd;
         }
         if (function_exists('popen')) {
             pclose(popen($cmd, "r"));
