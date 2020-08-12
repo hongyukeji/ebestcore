@@ -48,7 +48,7 @@ return [
             'support_terminal' => [
                 'pc', 'wap', 'app', 'miniapp',
             ],
-            'status' => true,
+            'status' => false,
         ],
         /*'paypal' => [
             'name' => 'PayPal',
