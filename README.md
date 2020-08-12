@@ -9,6 +9,13 @@
 <a href="https://packagist.org/packages/hongyukeji/ebestcore"><img src="https://poser.pugx.org/hongyukeji/ebestcore/license" alt="License"></a>
 </p>
 
+发布内核版本
+-------------------
+
+```
+git tag v3.9.111 && git push origin v3.9.111 master
+```
+
 Git
 -------------------
 
@@ -30,8 +37,6 @@ $ git fetch --all && git reset --hard origin/master && git pull
 $ git tag
 $ git tag v1.0.0
 $ git push origin v1.0.0 master
-
-$ git tag v1.0.0 && git push origin v1.0.0 master
 
 # Git分支
 $ git checkout -b dev
