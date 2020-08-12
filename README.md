@@ -13,7 +13,7 @@
 -------------------
 
 ```
-git tag v3.9.111 && git push origin v3.9.111 master
+git tag v3.9.120 && git push origin v3.9.120 master
 ```
 
 Git
