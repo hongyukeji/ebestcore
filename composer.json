@@ -87,7 +87,10 @@
     "autoload": {
         "psr-4": {
             "System\\": "src/"
-        }
+        },
+        "files": [
+            "src/Helpers/functions.php"
+        ]
     },
     "autoload-dev": {
     },
